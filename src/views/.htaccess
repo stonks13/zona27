@@ -1,0 +1,9 @@
+RewriteEngine On
+
+#RewriteRule "^redes$" redes.php 
+RewriteRule "^añadirred$" redes.php?añadir
+RewriteRule "^modificarred$" redes.php?modificarred
+
+#RewriteRule "^artistas$" artistas.php 
+RewriteRule "^añadirartista$" artistas.php?añadir
+RewriteRule "^modificarartista$" artistas.php?modificarartista
