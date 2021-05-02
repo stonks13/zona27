@@ -8,11 +8,15 @@ $artistas = getAllArtistas();
 if(isset($_POST["submit"])){
     
     $rutaFinal = guardarImagen("artistas");
-    if($directorio == 1){
+    echo $rutaFinal;
+    if($rutaFinal == "1"){
+        echo "1";
         $mensajeError = "Fallo al subir la imagen";
-    } else if($directorio == 2){
+    } else if($rutaFinal == "2"){
+        echo "2";
         $mensajeError = "Seleccioné un archivo";
     } else {
+        echo "3";
         añadirArtista($_POST["nombre"], $_POST["descripcion"], $rutaFinal);
     }
     //aa($image);
@@ -39,6 +43,7 @@ if(isset($_POST["submit"])){
         <h1>Modificar red</h1>
         <?php foreach($artistas as $artista): ?>
             <h3><?php echo $artista['nombre'] ?></h3>
+            <img src="/imagenes/artistas/<?php echo $artista['img'] ?>" alt="" style="width: 100px; height: 100px">
             <p><?php echo $artista['descripcion'] ?></p>
         <?php endforeach ?>
     <?php endif ?>

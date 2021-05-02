@@ -1,5 +1,7 @@
 <?php 
 
+//TODO: arreglar los echo.
+
 function guardarImagen($tipo){ //tipo = artista, tattoos, piercings...
     
 	$extension = $_FILES["image"]["type"];
@@ -19,13 +21,23 @@ function guardarImagen($tipo){ //tipo = artista, tattoos, piercings...
             return $ruta;            
 		}
 		else{
-			return 1; //Error al subir la imagen
+			return "1"; //Error al subir la imagen
 		}
 	}
 	else{
-		return 2; //Extensión no válida
+		return "2"; //Extensión no válida
 	}
 }
 
+function eliminarImagen($tipo, $imagen){
+	$directorio = "/home/xavi/Documents/zona27/imagenes/".$tipo."/";
+	
+	if(unlink($directorio.$imagen)){
+		echo "ok";
+	} else {
+		echo "mal";
+	}
+}
+//eliminarImagen("artistas", "30-04-2021_18:49:00.jpeg");
  
 ?>

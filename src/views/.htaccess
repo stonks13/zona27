@@ -7,3 +7,11 @@ RewriteRule "^modificarred$" redes.php?modificarred
 #RewriteRule "^artistas$" artistas.php 
 RewriteRule "^añadirartista$" artistas.php?añadir
 RewriteRule "^modificarartista$" artistas.php?modificarartista
+
+#RewriteRule "^tattoos$" tattoos.php 
+RewriteRule "^añadirtattoo$" tattoos.php?añadir
+RewriteRule "^modificartattoo$" tattoos.php?modificartattoo
+
+#RewriteRule "^piercings$" piercings.php 
+RewriteRule "^añadirpiercing$" piercings.php?añadir
+RewriteRule "^modificarpiercing$" piercings.php?modificarpiercing
