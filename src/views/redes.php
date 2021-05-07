@@ -61,9 +61,9 @@ if(isset($_POST["submit"])){
                 <?php endforeach ?>
             </select>
             <?php foreach($redes as $red): ?>
-            <div id="<?php echo "id_".$red['id'] ?>" class="filterDiv categoria<?php echo $red['id_artista']?>">
+            <div id="<?php echo "id_".$red['id'] ?>" class="filterDiv categoria<?php echo $red['id_artista']?>" onclick="desplegable(<?php echo $red['id'] ?>)">
                 <h2><?php echo $red['id_red'] ?></h2>
-                <div class="desplegable">
+                <div class="desplegable a s" id="desp_<?php echo $red['id'] ?>">
                     <p><?php echo $red['url_red'] ?></p>
                     <button onclick="eliminarRed(<?php echo $red['id'] ?>)">eliminar</button>
                 </div>

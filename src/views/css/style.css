@@ -94,13 +94,30 @@ form input[type=submit]{
 }
 .filterDiv {
     display: none;
-    border: 1px solid black;
+    margin: 5px 0;
+}
+.filterDiv h2{
+    border: 2px solid darkslategray;
+    border-radius: 5px;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 20px 0 20px 10px;
 }
 .show {
     display: block;
 }
 .desplegable {
+    border: 2px solid darkslategray;
+    border-top: none;
+    border-bottom: none;
     background-color: wheat;
     height: 0;
+    margin: 0 10px;
+    padding-left: 10px;
     overflow: hidden;
+}
+.active {
+    height: auto;
+    border-bottom: 2px solid darkslategray;
 }

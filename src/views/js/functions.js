@@ -13,7 +13,13 @@ function fileSelector(file){
 }
 
 function desplegable(id){
-
+    var item = document.getElementById("desp_"+id);
+    var clase = item.className.split(" ");
+    if (clase[clase.length -1] == "active"){
+        item.classList.remove("active");
+    } else{
+        item.classList.add("active");
+    }
 }
 
 function filtrarSeleccionados(classSelected){
