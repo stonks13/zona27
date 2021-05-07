@@ -6,13 +6,18 @@ if(isset($_POST["submit"])){
     $login = loginAdmin($_POST["nombre"]);
 
     if(password_verify($_POST["passw"], $login)){
-        header('Location: admin.php');
+        session_start();
+        $_SESSION['user']=$_POST['nombre'];
+
+        header('Location: src/admin.php');
     } else {
-        header('Location: login.php');
+        pantallaLogin();
     }
 
+} else {
+    pantallaLogin();
 }
-
+function pantallaLogin(){
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,3 +36,8 @@ if(isset($_POST["submit"])){
     </form>
 </body>
 </html>
+
+<?php 
+die();
+}
+?>

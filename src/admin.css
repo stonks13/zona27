@@ -1,0 +1,31 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0px;
+    padding: 0;
+}
+.administracionLista {
+    border-radius: 15px;
+    width: 90%;
+    height: auto;
+    min-width: 280px;
+    max-width: 800px;
+    background-color: #eeeeee;
+    padding: 20px;
+}
+.administracionLista ul {
+    margin-left: 20px;
+}
+.administracionLista ul li {
+    cursor: pointer;
+    padding: 10px;
+    width: 200px;
+    list-style-type: disc;  
+    border-radius: 5px;
+    color: darkslateblue;
+}
+.administracionLista ul li a {
+    color: darkslateblue;
+    text-decoration: none;
+}

@@ -29,12 +29,13 @@ if(isset($_POST["submit"])){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>piercings</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/functions.js"></script>
 </head>
 <body>
     <?php if(isset($_GET["añadir"])): ?>
         <h1>Añadir piercing</h1>
         <form method="POST" enctype="multipart/form-data">
-            <input type="file" name="image" placeholder="Foto del Piercing">
             <input type="text" name="nombre" placeholder="Titulo Piercing">
             <input type="text" name="descripcion" placeholder="Descripcion Piercing">
             <input type="text" name="etiqueta" placeholder="tags">
@@ -48,6 +49,8 @@ if(isset($_POST["submit"])){
                     <option value="<?php echo $artista['id'] ?>"><?php echo $artista['nombre'] ?></option>
                 <?php endforeach ?>
             </select>
+            <input type="file" id="file" onchange="fileSelector(this)" name="image">
+            <label for="file"><span class="uploadIcon">&#8679;</span><span id="spanFileName"> Selecciona una imagen...</span></label>
             <input type="submit" name="submit" value="Añadir">
         </form>
     <?php elseif(isset($_GET["modificarpiercing"])): ?>

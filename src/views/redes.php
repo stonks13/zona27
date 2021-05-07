@@ -18,6 +18,8 @@ if(isset($_POST["submit"])){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Redes</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/functions.js"></script>
 
 
     <script>
@@ -28,12 +30,14 @@ if(isset($_POST["submit"])){
         }
         //funcion para modificar red
         //que me cambie el tag a un input con la red actual y muestre un boton de guardar.
+
     </script>
 </head>
 <body>
     <?php if(isset($_GET["añadir"])): ?>
-        <h1>Añadir red</h1>
         <form method="POST">
+            <a href="../../../admin">atras</a>
+            <h1>Añadir red</h1>
             <select name="red" id="red">
                 <?php foreach($nombreRedes as $red): ?>
                     <option value="<?php echo $red['id'] ?>"><?php echo $red['nombre'] ?></option>
@@ -45,17 +49,31 @@ if(isset($_POST["submit"])){
                 <?php endforeach ?>
             </select>
             <input type="text" name="red_url" placeholder="url">
-            <input type="submit" name="submit" value="Añadir">
+            <input type="submit" name="submit" value="AÑADIR">
         </form>
     <?php elseif(isset($_GET["modificarred"])): ?>
-        <h1>Modificar red</h1>
-        <?php foreach($redes as $red): ?>
-        <div id="<?php echo "id_".$red['id'] ?>">
-            <h2><?php echo $red['id_red'] ?></h2>
-            <p><?php echo $red['url_red'] ?></p>
-            <button onclick="eliminarRed(<?php echo $red['id'] ?>)">eliminar</button>
-        </div>
-        <?php endforeach ?>
+        <form method="post">
+            <h1>Modificar red</h1>
+            <a href="../../../admin">atras</a>
+            <select name="artistas" id="artistas" onchange="filtrarSeleccionados('categoria'+value+'')">
+                <?php foreach($artistas as $artista): ?>
+                    <option value="<?php echo $artista['id'] ?>"><?php echo $artista['nombre'] ?></option>
+                <?php endforeach ?>
+            </select>
+            <?php foreach($redes as $red): ?>
+            <div id="<?php echo "id_".$red['id'] ?>" class="filterDiv categoria<?php echo $red['id_artista']?>">
+                <h2><?php echo $red['id_red'] ?></h2>
+                <div class="desplegable">
+                    <p><?php echo $red['url_red'] ?></p>
+                    <button onclick="eliminarRed(<?php echo $red['id'] ?>)">eliminar</button>
+                </div>
+            </div>
+            <?php endforeach ?>
+
+        </form>
     <?php endif ?>
 </body>
+<script>
+    filtrarSeleccionados("all");
+</script>
 </html>

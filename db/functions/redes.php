@@ -48,7 +48,7 @@ function eliminarRed($id){
     }
     
 }
-function getAllRedes(){
+function gett(){
     $manager = new DBzona();
     $sql = "SELECT * FROM redes";
     $stmt = $manager->dbconn()->prepare($sql);
@@ -66,9 +66,20 @@ function getAllNombreRedes(){
     return $result;
     
 }
+function getAllRedes (){
+    //SELECT e.id, c.nombre AS id_red, d.nombre AS id_artista, e.url_red from redes e, categoria_redes c, artista d where e.id_red = c.id AND e.id_artista = d.id
+    //SELECT e.id, c.nombre AS id_red, e.id_artista, e.url_red from redes e, categoria_redes c where e.id_red = c.id
+    $manager = new DBzona();
+    $sql = "SELECT e.id, c.nombre AS id_red, e.id_artista, e.url_red from redes e, categoria_redes c where e.id_red = c.id";
+    $stmt = $manager->dbconn()->prepare($sql);
+    $stmt->execute();
+    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    return $result;
+}
 //añadirRedes(1, 1, "https://www.instagram.com/zona27tattoo/");
 //modificarRed(1, "https://www.instagram.com/zona27tattoo/");
 //eliminarRed(1);
 //print_r(getAllRedes());
 //print_r(getAllNombreRedes());
+//print_r(gett());
 ?>
