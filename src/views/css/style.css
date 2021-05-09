@@ -137,3 +137,14 @@ form input[type=submit]{
     border-radius: 5px;
     border: 2px solid rgb(51, 51, 51) ;
 }
+.desplegable input.contenidoEditable{
+    color: deeppink;
+    border: none;
+    background: none;
+    border-radius: 0;
+    height: auto;
+    padding: 0;
+    text-indent: 5px;
+    margin-left: 5px;
+    border-bottom: 2px solid rgb(51, 51, 51);
+}

@@ -72,8 +72,8 @@ if(isset($_POST["submit"])){
                     <button class="eliminarbtn" onclick="eliminarRed(<?php echo $red['id'] ?>)">eliminar</button>
                 </div>
                 <div class="desplegable" id="desp_<?php echo $red['id'] ?>">
-                    <p><?php echo $red['url_red'] ?></p>
-                    <input type="text" value="<?php echo $red['url_red'] ?>" readonly>
+                    <!-- TODO: event change -->
+                    <h3>Url: <input type="text" onchange="alert('1')" class="contenidoEditable" value="<?php echo $red['url_red'] ?>" ></h3>
                     <button type="button" onclick="alert('1')">Editar</button>
                 </div>
             </div>

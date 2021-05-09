@@ -26,13 +26,14 @@ function pantallaLogin(){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <link rel="stylesheet" href="src/admin.css">
 </head>
 <body>
     <form method="POST">
-        <input type="text" name="nombre" placeholder="nombre">
-        <input type="password" name="passw" placeholder="nombre">
+        <input type="text" name="nombre" placeholder="Nombre de usuario">
+        <input type="password" name="passw" placeholder="Contraseña">
         <input name="control" type="hidden" value="login"/>
-        <input name="submit" type="submit" value="submit"/>
+        <input name="submit" type="submit" value="Entrar"/>
     </form>
 </body>
 </html>
