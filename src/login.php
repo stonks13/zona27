@@ -9,7 +9,7 @@ if(isset($_POST["submit"])){
         session_start();
         $_SESSION['user']=$_POST['nombre'];
 
-        header('Location: src/admin.php');
+        header('Location: /admin');
     } else {
         pantallaLogin();
     }

@@ -2,6 +2,11 @@
 require "../../db/functions/redes.php";
 require "../../db/functions/artistas.php";
 
+session_start();
+if(!isset($_SESSION['user'])){
+    header("Location: /login");
+}
+
 $redes = getAllRedes();
 $artistas = getAllArtistas();
 $nombreRedes = getAllNombreRedes();
@@ -61,11 +66,15 @@ if(isset($_POST["submit"])){
                 <?php endforeach ?>
             </select>
             <?php foreach($redes as $red): ?>
-            <div id="<?php echo "id_".$red['id'] ?>" class="filterDiv categoria<?php echo $red['id_artista']?>" onclick="desplegable(<?php echo $red['id'] ?>)">
-                <h2><?php echo $red['id_red'] ?></h2>
-                <div class="desplegable a s" id="desp_<?php echo $red['id'] ?>">
+            <div id="<?php echo "id_".$red['id'] ?>" class="filterDiv categoria<?php echo $red['id_artista']?>">
+                <div class="block" onclick="desplegable(<?php echo $red['id'] ?>)">
+                    <h2><?php echo $red['id_red'] ?></h2>
+                    <button class="eliminarbtn" onclick="eliminarRed(<?php echo $red['id'] ?>)">eliminar</button>
+                </div>
+                <div class="desplegable" id="desp_<?php echo $red['id'] ?>">
                     <p><?php echo $red['url_red'] ?></p>
-                    <button onclick="eliminarRed(<?php echo $red['id'] ?>)">eliminar</button>
+                    <input type="text" value="<?php echo $red['url_red'] ?>" readonly>
+                    <button type="button" onclick="alert('1')">Editar</button>
                 </div>
             </div>
             <?php endforeach ?>

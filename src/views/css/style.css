@@ -96,13 +96,18 @@ form input[type=submit]{
     display: none;
     margin: 5px 0;
 }
-.filterDiv h2{
+.block {
+    display: flex;
+    justify-content: space-between;
     border: 2px solid darkslategray;
     border-radius: 5px;
     height: 100%;
     width: 100%;
-    margin: 0;
-    padding: 20px 0 20px 10px;
+
+}
+.block h2, 
+.block button{
+    margin-right: 10px;
 }
 .show {
     display: block;
@@ -120,4 +125,15 @@ form input[type=submit]{
 .active {
     height: auto;
     border-bottom: 2px solid darkslategray;
+}
+
+.filterDiv button{
+    height: 40px;
+    width: 80px;
+    margin: 10px;
+    float: right;
+    background: grey;
+    color: white;
+    border-radius: 5px;
+    border: 2px solid rgb(51, 51, 51) ;
 }

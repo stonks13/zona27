@@ -2,6 +2,11 @@
 require "../../db/functions/artistas.php";
 include("../../lib/subirFicheros.php");
 
+session_start();
+if(!isset($_SESSION['user'])){
+    header("Location: /login");
+}
+
 $artistas = getAllArtistas();
 
 

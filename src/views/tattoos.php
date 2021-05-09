@@ -3,6 +3,11 @@ require "../../db/functions/tattoos.php";
 include("../../lib/subirFicheros.php");
 require "../../db/functions/artistas.php";
 
+session_start();
+if(!isset($_SESSION['user'])){
+    header("Location: /login");
+}
+
 $tattoos = getAllTattoos();
 $artistas = getAllArtistas();
 $categoriasTattoos = getAllTattoosCategoria();
