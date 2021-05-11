@@ -1,3 +1,7 @@
+<?php 
+include "lib/constants.php";
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,20 +11,13 @@
     <title>Document</title>
     <link rel="stylesheet" href="lib/css/header.css">
     <link rel="stylesheet" href="lib/css/index.css">
+    <script src="lib/js/header.js"></script>
     
 
 </head>
 <body>
     <header>
-        <nav>
-            <img src="imagenes/constantes/logo.png" alt="">
-            <ul>
-                <li><a href="#">HOME</a></li>
-                <li><a href="#">HOME</a></li>
-                <li><a href="#">HOME</a></li>
-                <li><a href="#">HOME</a></li>
-            </ul>
-        </nav>
+        <?php echo $header ?>
         <img src="imagenes/constantes/logo.png" alt="">
         <button>&#8609;</button>
     </header>

@@ -10,7 +10,6 @@ header{
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    display: none; 
 }
 header img{
     display: block;
@@ -26,11 +25,29 @@ header nav{
     position: fixed;
 
 }
+#mainbox{
+	margin-right: 40px;
+	font-size: 36px;
+	cursor: pointer;
+	transition: all .6s;
+	color: white;
+    align-self: center;
+}
+.closebtn{
+    position: absolute;
+    top: 10px;
+    right: 40px;
+    font-size: 60px;
+    margin-left: 32px;
+    cursor: pointer;
+    height: auto;
+}
 header nav img {
     height: 80px;
     width: 80px;
     filter: invert(100%);
     margin: 0 10px;
+    z-index: 2;
 }
 header button {
     margin-bottom: 50px;
@@ -56,29 +73,68 @@ header button:focus{
 
 /* Responsive movile*/
 
+header nav ul{
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    height: 0;
+    width: 100vw;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: black;
+    z-index: 1;
+    opacity: 85%;
+    overflow-x: hidden;
+    transition: all .3s ease-out;
+    
+}
+header nav ul li{
+    height: 80px;
+    width: 100%;
+    list-style-type: none;
+}
+header nav ul li a {
+    display: flex;
+    color: white;
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    height: 100%;
+}
+
 /* Responsive tablet*/
-@media screen and (min-width: 768px){
+@media screen and (min-width: 900px){
+    header nav ul {
+        position: initial;
+        height: 80px !important;
+        flex-direction: row;
+        width: auto;
+        background-color: inherit;
+        opacity: 100%;
+        margin-right: 20px;
+    }
+    header nav ul li{
+        height: 100%;
+        width: auto;
+        margin: 0 15px;
+        list-style-type: none;
+    }
+    .closebtn{
+        display: none;
+    }
+    #mainbox {
+        display: none !important;
+    }
 }
 /* Responsive laptop*/
 @media screen and (min-width: 1382px){
 }
 
-header nav ul {
-    height: 100%;
-    margin: 0;
-    display: flex;
-    flex-direction: row;
-}
-header nav ul li{
-    height: 100%;
-    width: 120px;
-    list-style-type: none;
-}
-header nav ul li a {
-    display: flex;
-    text-decoration: none;
-    align-items: center;
-    justify-content: center;
-    font-size: 24px;
-    height: 100%;
-}
+/*
+
+
+*/
