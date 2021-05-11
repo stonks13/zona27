@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="lib/css/header.css">
+    <link rel="stylesheet" href="lib/css/index.css">
+    
+
 </head>
 <body>
     <header>
@@ -21,6 +24,14 @@
         <img src="imagenes/constantes/logo.png" alt="">
         <button>&#8609;</button>
     </header>
+    <main>
+        <article class="artistas">
+            <section>
+                <img src="imagenes/artistas/30-04-2021_18:51:42.jpeg" alt="">
+                <h2>Xavi xavi</h2>
+            </section>
+        </article>
+    </main>
     <h1>aaaaaa</h1>
     <h1>aaaaaa</h1>
     <h1>aaaaaa</h1>

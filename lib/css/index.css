@@ -1,0 +1,25 @@
+main {
+    background-color: #121116;
+    color: white;
+}
+article.artistas {
+    display: flex;
+    justify-content: center;
+
+}
+article.artistas section{
+    width: 260px;
+    height: 500px;
+    border: 2px solid white;
+    border-radius: 15px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    
+
+}
+.artistas section img {
+    border-radius: 50%;
+    border: 1px solid white;
+}
