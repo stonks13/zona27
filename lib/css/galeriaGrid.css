@@ -1,0 +1,39 @@
+article.galeria{
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: white;
+    justify-content: center;
+    background-color: #121116;
+}
+
+article.galeria div{
+    height: 220px;
+    width: 50%;
+    overflow: hidden;
+}
+article.galeria img{
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
+@media screen and (min-width: 668px){
+
+}
+@media screen and (min-width: 992px){
+    article.galeria img {
+        filter: grayscale(100%);
+        transition: transform .5s, filter 1s;
+    }
+    article.galeria div:hover img{
+        transform: scale(1.1);
+        filter: grayscale(0%);
+    }
+    article.galeria div {
+        height: 400px;
+        width: 25%;
+    }
+}
