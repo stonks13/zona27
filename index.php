@@ -9,7 +9,12 @@ include "lib/constants.php";
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!-- glider -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1.7.7/glider.min.css">
+    <!-- materialize -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+
     <link rel="stylesheet" href="lib/css/header.css">
     <link rel="stylesheet" href="lib/css/index.css">
     <link rel="stylesheet" href="lib/css/galeriaGrid.css">
@@ -24,50 +29,79 @@ include "lib/constants.php";
         <button>&#8609;</button>
     </header>
     <main>
+        <h1>Artistas</h1>
         <article class="artistas">
-            <button aria-label="Previous" class="glider-prev">«</button>
-            <div class="glider">
-                <section>
-                    <img src="imagenes/artistas/30-04-2021_18:51:42.jpeg" alt="">
+            <div class="carousel center-align">
+                <section class="carousel-item">
                     <h2>Xavi xavi</h2>
+                    <div class= "linea-division"></div>
+                    <a href="#"><u>Ver más</u></a>
+                    <img src="imagenes/1.jpg" alt="">
                 </section>
-                <section>
-                    <img src="imagenes/artistas/30-04-2021_18:51:42.jpeg" alt="">
+                <section class="carousel-item">
                     <h2>Xavi xavi</h2>
+                    <div class= "linea-division"></div>
+                    <a href="#"><u>Ver más</u></a>
+                    <img src="imagenes/1.jpg" alt="">
                 </section>
-                <section>
-                    <img src="imagenes/artistas/30-04-2021_18:51:42.jpeg" alt="">
+                <section class="carousel-item">
                     <h2>Xavi xavi</h2>
+                    <div class= "linea-division"></div>
+                    <a href="#"><u>Ver más</u></a>
+                    <img src="imagenes/1.jpg" alt="">
+                </section>
+                <section class="carousel-item">
+                    <h2>Xavi xavi</h2>
+                    <div class= "linea-division"></div>
+                    <a href="#"><u>Ver más</u></a>
+                    <img src="imagenes/1.jpg" alt="">
+                </section>
+                <section class="carousel-item">
+                    <h2>Xavi xavi</h2>
+                    <div class= "linea-division"></div>
+                    <a href="#"><u>Ver más</u></a>
+                    <img src="imagenes/1.jpg" alt="">
                 </section>
 
             </div>
-            <button aria-label="Next" class="glider-next">»</button>
-            <div role="tablist" class="dots"></div>
         </article>
+        <h1>Ultimos Trabajos</h1>
         <article class="galeria">
             <div>
-                <img src="imagenes/artistas/30-04-2021_18:51:42.jpeg" alt="">
+                <img src="imagenes/1.jpg" alt="">
             </div>
             <div>
-                <img src="imagenes/artistas/30-04-2021_18:51:42.jpeg" alt="">
+                <img src="imagenes/1.jpg" alt="">
             </div>
             <div>
-                <img src="imagenes/artistas/30-04-2021_18:51:42.jpeg" alt="">
+                <img src="imagenes/1.jpg" alt="">
             </div>
             <div>
-                <img src="imagenes/artistas/30-04-2021_18:51:42.jpeg" alt="">
+                <img src="imagenes/1.jpg" alt="">
             </div>
             <div>
-                <img src="imagenes/artistas/30-04-2021_18:51:42.jpeg" alt="">
+                <img src="imagenes/1.jpg" alt="">
             </div>
             <div>
-                <img src="imagenes/artistas/30-04-2021_18:51:42.jpeg" alt="">
+                <img src="imagenes/1.jpg" alt="">
             </div>
             <div>
-                <img src="imagenes/artistas/30-04-2021_18:51:42.jpeg" alt="">
+                <img src="imagenes/1.jpg" alt="">
             </div>
             <div>
-                <img src="imagenes/artistas/30-04-2021_18:51:42.jpeg" alt="">
+                <img src="imagenes/1.jpg" alt="">
+            </div>
+            <div>
+                <img src="imagenes/1.jpg" alt="">
+            </div>
+            <div>
+                <img src="imagenes/1.jpg" alt="">
+            </div>
+            <div>
+                <img src="imagenes/1.jpg" alt="">
+            </div>
+            <div>
+                <img src="imagenes/1.jpg" alt="">
             </div>
         </article>
     </main>
@@ -104,7 +138,11 @@ include "lib/constants.php";
     <h1>aaaaaa</h1>
     <h1>aaaaaa</h1>
 
+    <!-- glider js -->
     <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.7/glider.min.js"></script>
+    <!-- Materialize.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
     <script src="lib/js/carousel.js"></script>
 </body>
 </html>
