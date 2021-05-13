@@ -1,0 +1,34 @@
+footer{
+    width: auto;
+    height: 600px;
+    background-color: #121116;
+    display: flex;
+    justify-content: center;
+}
+footer .mitad-footer {
+    display: flex;
+    flex-direction: column;
+}
+.top-side {
+    display: flex;
+    justify-content: space-between;
+    height: 200px;
+    width: 400px;
+    align-items: flex-end;
+}
+.top-side img {
+    height: 200px;
+    width: auto;
+    filter: invert(100%);
+}
+.top-side .redes img{
+    height: 80px;
+    width: auto;
+    filter: invert(100%);
+
+}
+.linea-division {
+    width: 100%;
+    height: 2px;
+    background-color: white;
+}

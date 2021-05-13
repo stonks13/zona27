@@ -1,8 +1,6 @@
 article.grid-Img{
-    display: flex;
     flex-wrap: wrap;
     background-color: white;
-    justify-content: center;
     padding: 10px 0;
     display: flex;
     justify-content: space-evenly;

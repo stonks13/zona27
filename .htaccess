@@ -3,3 +3,7 @@ RewriteBase /
 
 RewriteRule "^admin$" src/admin.php
 RewriteRule "^login$" src/login.php
+
+
+RewriteRule "^galeria$" views/galeria.php?galeria
+RewriteRule "^piercings$" views/galeria.php?piercings

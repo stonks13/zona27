@@ -14,17 +14,18 @@ include "lib/constants.php";
 
 
     <link rel="stylesheet" href="lib/css/header.css">
+    <script src="lib/js/header.js"></script>
     <link rel="stylesheet" href="lib/css/index.css">
     <link rel="stylesheet" href="lib/css/galeriaGrid.css">
-    <script src="lib/js/header.js"></script>
+    <link rel="stylesheet" href="lib/css/footer.css">
     
 
 </head>
 <body>
-    <header>
+    <header class="landingPage">
         <?php echo $header ?>
-        <img src="imagenes/constantes/logo.png" alt="">
-        <button>&#8609;</button>
+        <img src="imagenes/constantes/logo_recortado.png" alt="">
+        <button onclick="document.documentElement.scrollTop = 100;">&#8609;</button>
     </header>
     <main>
         <h1>Artistas</h1>
@@ -142,10 +143,37 @@ include "lib/constants.php";
             </div>
         </article>
     </main>
+    <footer>
+        <div class="mitad-footer">
+            <section class="top-side">
+                <img src="imagenes/constantes/logo_recortado.png" alt="">
+                <div class="redes">
+                    <img src="imagenes/constantes/facebook.png" alt="">
+                    <img src="imagenes/constantes/facebook.png" alt="">
+                    <img src="imagenes/constantes/facebook.png" alt="">
+                </div>
+            </section>
+            <div class= "linea-division"></div>
+            <section class="top-side">
+                <img src="imagenes/constantes/logo_recortado.png" alt="">
+                <div class="redes">
+                    <img src="imagenes/constantes/facebook.png" alt="">
+                    <img src="imagenes/constantes/facebook.png" alt="">
+                    <img src="imagenes/constantes/facebook.png" alt="">
+                </div>
+            </section>            
+        </div>
+    </footer>
 
     <!-- Materialize.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
     <script src="lib/js/carousel.js"></script>
+    <script>
+        function scroll(){
+            document.documentElement.scrollTop = 0;
+
+        }
+    </script>
 </body>
 </html>

@@ -2,7 +2,7 @@
 
 $header = <<<EOD
         <nav>
-        <img src="imagenes/constantes/logo.png" alt="">
+        <img src="/imagenes/constantes/logo_recortado.png" alt="">
         <div id="mainbox" onclick="desplegarNavMenu()">&#9776;</div>
         <ul id="menu">
             <li><a class="closebtn" onclick="cerrarNavMenu()">&times;</a></li>

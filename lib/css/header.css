@@ -4,18 +4,22 @@ body{
 }
 header{
     width: 100%;
-    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 35%, rgba(173,174,176,1) 100%);
-    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
 }
+.landingPage {
+    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 35%, rgba(173,174,176,1) 100%);
+    height: 100vh;
+    
+}
 header img{
     display: block;
     margin: auto;
-    height: 20%;
+    height: 70%;
     object-fit: cover;
+    margin-top: 100px;
 }
 header nav{
     background: #121116;
@@ -46,9 +50,9 @@ header nav{
 }
 header nav img {
     height: 80px;
-    width: 80px;
+    width: auto;
     filter: invert(100%);
-    margin: 0 10px;
+    margin: 0 50px;
     z-index: 2;
 }
 header button {
@@ -64,12 +68,15 @@ header button {
     border-radius: 50%;
     background: none;
     transition: 0.5s;
+    position: absolute;
+    bottom: -20px;
 }
 header button:hover {
     color: white;
     background-color: black;
 }
-header button:focus{
+header button:focus,
+header button:focus-visible{
     outline: none;
 }
 
