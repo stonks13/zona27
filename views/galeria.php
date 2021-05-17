@@ -26,6 +26,8 @@ if(isset($_GET["galeria"])){
     <script src="/lib/js/header.js"></script>
     <link rel="stylesheet" href="/lib/css/galeria.css">
     <link rel="stylesheet" href="/lib/css/galeriaGrid.css">
+    <!-- footer css -->
+    <link rel="stylesheet" href="lib/css/footer.css">
 </head>
 <body>
     <header>
@@ -76,5 +78,8 @@ if(isset($_GET["galeria"])){
             <?php endforeach; ?>
         </article>
     </main>
+
+    <!-- constant footer -->
+    <?php echo $footer ?>
 </body>
 </html>

@@ -58,9 +58,6 @@ article.artistas {
     cursor: pointer;
 }
 
-@media screen and (min-width: 425px){
-
-}
 @media screen and (min-width: 600px){
 
     article.artistas {

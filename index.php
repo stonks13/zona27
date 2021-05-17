@@ -17,6 +17,7 @@ include "lib/constants.php";
     <script src="lib/js/header.js"></script>
     <link rel="stylesheet" href="lib/css/index.css">
     <link rel="stylesheet" href="lib/css/galeriaGrid.css">
+    <!-- footer css -->
     <link rel="stylesheet" href="lib/css/footer.css">
     
 
@@ -143,27 +144,9 @@ include "lib/constants.php";
             </div>
         </article>
     </main>
-    <footer>
-        <div class="mitad-footer">
-            <section class="top-side">
-                <img src="imagenes/constantes/logo_recortado.png" alt="">
-                <div class="redes">
-                    <img src="imagenes/constantes/facebook.png" alt="">
-                    <img src="imagenes/constantes/facebook.png" alt="">
-                    <img src="imagenes/constantes/facebook.png" alt="">
-                </div>
-            </section>
-            <div class= "linea-division"></div>
-            <section class="top-side">
-                <img src="imagenes/constantes/logo_recortado.png" alt="">
-                <div class="redes">
-                    <img src="imagenes/constantes/facebook.png" alt="">
-                    <img src="imagenes/constantes/facebook.png" alt="">
-                    <img src="imagenes/constantes/facebook.png" alt="">
-                </div>
-            </section>            
-        </div>
-    </footer>
+
+    <!-- constant footer -->
+    <?php echo $footer ?>
 
     <!-- Materialize.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
