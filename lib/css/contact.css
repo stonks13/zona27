@@ -1,4 +1,104 @@
 main {
-    height: 100vh;
+    margin-top: 80px;
+    height: 100%;
     background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 35%, rgba(173,174,176,1) 100%);
+    color: black;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    padding-bottom: 50px;
+}
+
+main .informacion {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+}
+main h2 {
+    font-size: 36px;
+}
+main p, main td {
+    font-size: 20px;
+}
+main .informacion table {
+    margin: 10px auto;
+    width: 260px;
+}
+main .informacion table td{
+    padding: 5px;
+}
+
+main .formulario {
+    padding: 20px;
+    margin: auto 0;
+}
+main .formulario form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+main .formulario form div {
+    width: 100%;
+    text-align: start;
+}
+main .formulario form div input, main .formulario form div textarea{
+    width: 100%;
+    border: 2px solid rgb(51, 51, 51);
+    border-radius: 4px;
+    font-size: 18px;
+    text-indent: 5px;
+}
+main .formulario form div input {
+    height: 35px;
+}
+main .formulario form div textarea{
+    height: 150px;
+    resize: none;
+}
+main .formulario form div input:hover, main .formulario form div textarea:hover {
+    outline: none;
+}
+input[type=submit] {
+    background-color: rgb(51, 51, 51);
+    border: 0;
+    color: white;
+    border-radius: 5px;
+    height: 50px;
+    width: 100px;
+    font-size: 20px;
+    float: right;
+    margin-right: -7px;
+    margin-top: 5px;
+}
+
+main .linea-division {
+    height: 600px;
+    width: 0px;
+    border: 2px solid rgb(51, 51, 51);
+    align-self: center;
+    margin: 20px 40px 0 40px;
+    display: none;
+}
+#msg-confirmacion {
+    color: rgb(100, 167, 0);
+}
+#msg-confirmacion span{
+    color: red;
+}
+
+@media screen and (min-width: 1000px){
+    
+    main {
+        flex-direction: row;
+        justify-content: center;
+    }
+    main .formulario {
+        width: 100%;
+        max-width: 600px;
+    }
+    main .linea-division {
+        display: block;
+    }
+    
+
 }

@@ -1,16 +1,19 @@
 <?php 
 include "../lib/constants.php";
+
 if (isset($_POST["submit"])){
+    $destino = "xprattoro@gmail.com";
+    $asunto = "Pagina Contacto Web";
+
     $nombre = $_POST['nombre'];
 	$correoElectronico = $_POST['correo'];
 	$mensaje = $_POST['mensaje'];
-
-    if(mail('xprattoro@gmail.com', $nombre, $mensaje)){
-		echo "mail enviado";
-	}else{
-		echo "uyuyuyuyuy";
-	}
+    $correo = "De: $nombre \nCorreo Electronico: $correoElectronico \nMensaje: $mensaje";
+    mail($destino, $asunto, $correo);
+    dd("aaaa");
+    
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -30,7 +33,7 @@ if (isset($_POST["submit"])){
 </head>
 <body>
     <header>
-        <?php //echo $header ?>
+        <?php echo $header ?>
     </header>
     <main>
         <section class="informacion">
@@ -40,7 +43,8 @@ if (isset($_POST["submit"])){
             </article>
             <article>
                 <h2>Contacto</h2>
-                <p>935 93 77 17</p>
+                <p>&#128222; 935 93 77 17</p>
+                <p>&#128231; asdgfasd@asfasd.com</p>
             </article>
             <article>
                 <h2>Horario</h2>
@@ -77,14 +81,25 @@ if (isset($_POST["submit"])){
             </article>
             
         </section>
+        <div class= "linea-division"></div>
         <section class="formulario">
+            <h2>¡Cuentanos tu idea!</h2>
+            <p>Contacta con nosotros contandonos tu idea y te podremos hacer un presupuesto.</p>
             <form method="post" enctype="text/plain">
-                <p>Nombre*</p>
-                <input id="nombre" name="nombre" type="text"/>
-                <p>Correo electronico *</p>
-                <input id="email" name="correo" type="mail"/>
-                <textarea id="txtarea" name="mensaje"></textarea>
+                <div>
+                    <p>Nombre*</p>
+                    <input id="nombre" name="nombre" type="text"/>
+                </div>
+                <div>
+                    <p>Correo electronico *</p>
+                    <input id="email" name="correo" type="mail"/>
+                </div>
+                <div>
+                    <p>Mensaje</p>
+                    <textarea id="txtarea" name="mensaje"></textarea>
+                </div>
                 <input name="submit" type="submit" value="Enviar"/>
+                <p id="msg-confirmacion"><span>Se ha enviado correctamente!</span></p>
             </form>
         </section>
     </main>
