@@ -5,37 +5,70 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="pruebas.css">
     <script src="pruebas.js"></script>
 </head>
 <body>
-    
-    <h1 onclick="desplegar(1234)">hola</h1>
-    <div style="background-color: aqua;">
-        <input type="hidden" id="1234" placeholder="aaaaaaa">
-        <h2>aaa</h2>
-    </div>
-    <h1>select prueba</h1>
-    <select name="aa" id="aa" onchange="desplegarSelect()">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-    </select>
-    <div style="background-color: aqua;">
-        <input type="hidden" id="1" placeholder="aaaaaaa">
-        <h2>aaa</h2>
-    </div>
-    <div style="background-color: aqua;">
-        <input type="hidden" id="2" placeholder="aaaaaaa">
-        <h2>bbb</h2>
-    </div>
-    <div style="background-color: aqua;">
-        <input type="hidden" id="3" placeholder="aaaaaaa">
-        <h2>ccc</h2>
-    </div>
-    <div style="background-color: aqua;">
-        <input type="hidden" id="4" placeholder="aaaaaaa">
-        <h2>ddd</h2>
-    </div>
+    <main>
+        <nav class="admin-nav">
+            <button>Atras</button>
+            <h1>Redes Sociales</h1>
+        </nav>
+        <article>
+            <section class="container">
+                <div class="container-row">
+                    <h3>Hola</h3>
+                    <div>
+                        <button>Eliminar</button>
+                    </div>
+                </div>
+                <div class="container-content">
+                    <label for="nombre">Nombre: </label>
+                    <input id="nombre" type="text" value="Hola">
+                    <div>
+                        <button>Editar</button>
+                    </div>
+                </div>
+            </section>
+            <section class="container">
+                <div class="container-row">
+                    <h3>Hola</h3>
+                    <div>
+                        <button>Eliminar</button>
+                    </div>
+                </div>
+                <div class="container-content">
+                    <label for="nombre">Nombre: </label>
+                    <input id="nombre" type="text" value="Hola">
+                    <div>
+                        <button>Editar</button>
+                    </div>
+                </div>
+            </section>
+            <section class="container">
+                <div class="container-row">
+                    <h3>Hola</h3>
+                    <div>
+                        <button>Eliminar</button>
+                    </div>
+                </div>
+                <div class="container-content">
+                    <label for="nombre">Nombre: </label>
+                    <input id="nombre" type="text" value="Hola">
+                    <div>
+                        <button>Editar</button>
+                    </div>
+                </div>
+            </section>
+        </article>
+
+        <div class="add-container">
+            <button class="btn-addNew">Añadir</button>
+            <div class="addNew-frame">
+                <input type="text">
+                <button>Añadir</button>
+            </div>
+        </div>
+    </main>
 </body>
 </html>

@@ -1,4 +1,5 @@
 body {
+    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -7,11 +8,11 @@ body {
 }
 .administracionLista {
     border-radius: 15px;
+    margin-top: 80px;
     width: 90%;
-    height: auto;
+    height: 100vh;
     min-width: 280px;
     max-width: 800px;
-    background-color: #eeeeee;
     padding: 20px;
 }
 .administracionLista ul {

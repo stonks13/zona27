@@ -18,6 +18,7 @@ if(isset($_POST["submit"])){
     pantallaLogin();
 }
 function pantallaLogin(){
+    include "../lib/constants.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -26,15 +27,24 @@ function pantallaLogin(){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <link rel="stylesheet" href="/lib/css/header.css">
+    <script src="/lib/js/header.js"></script>
     <link rel="stylesheet" href="src/admin.css">
+    <!-- footer css -->
+    <link rel="stylesheet" href="/lib/css/footer.css">
 </head>
 <body>
+    <header>
+        <?php echo $header ?>
+    </header>
     <form method="POST">
         <input type="text" name="nombre" placeholder="Nombre de usuario">
         <input type="password" name="passw" placeholder="Contraseña">
         <input name="control" type="hidden" value="login"/>
         <input name="submit" type="submit" value="Entrar"/>
     </form>
+    <!-- constant footer -->
+    <?php echo $footer ?>
 </body>
 </html>
 
