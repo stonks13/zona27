@@ -2,16 +2,7 @@
 include "../lib/constants.php";
 
 if (isset($_POST["submit"])){
-    $destino = "xprattoro@gmail.com";
-    $asunto = "Pagina Contacto Web";
-
-    $nombre = $_POST['nombre'];
-	$correoElectronico = $_POST['correo'];
-	$mensaje = $_POST['mensaje'];
-    $correo = "De: $nombre \nCorreo Electronico: $correoElectronico \nMensaje: $mensaje";
-    mail($destino, $asunto, $correo);
-    dd("aaaa");
-    
+    header("Location: /");
 }
 
 ?>
@@ -27,6 +18,7 @@ if (isset($_POST["submit"])){
     <script src="lib/js/header.js"></script>
 
     <link rel="stylesheet" href="lib/css/contact.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <!-- footer css -->
     <link rel="stylesheet" href="lib/css/footer.css">
@@ -85,21 +77,21 @@ if (isset($_POST["submit"])){
         <section class="formulario">
             <h2>¡Cuentanos tu idea!</h2>
             <p>Contacta con nosotros contandonos tu idea y te podremos hacer un presupuesto.</p>
-            <form method="post" enctype="text/plain">
+            <form action="https://formspree.io/f/xoqvwedr" method="post">
                 <div>
-                    <p>Nombre*</p>
-                    <input id="nombre" name="nombre" type="text"/>
+                    <label for="nombre">Nombre*</label>
+                    <input id="nombre" name="nombre" type="text" required>
                 </div>
                 <div>
-                    <p>Correo electronico *</p>
-                    <input id="email" name="correo" type="mail"/>
+                    <label for="email">Correo electronico *</label>
+                    <input id="email" name="correo" type="mail" required>
                 </div>
                 <div>
-                    <p>Mensaje</p>
+                    <label for="txtarea">Mensaje</label>
                     <textarea id="txtarea" name="mensaje"></textarea>
                 </div>
-                <input name="submit" type="submit" value="Enviar"/>
-                <p id="msg-confirmacion"><span>Se ha enviado correctamente!</span></p>
+                <input id="sendMessage" name="submit" type="submit" value="Enviar"/>
+                <p id="msg-confirmacion">Se ha enviado correctamente!</p>
             </form>
         </section>
     </main>
@@ -107,4 +99,28 @@ if (isset($_POST["submit"])){
         <?php echo $footer ?>
     </footer>
 </body>
+<script>
+    $("#sendMessage").on("click", function() {
+        document.getElementById("msg-confirmacion").style.display = "block";
+        var nombre = document.getElementById("nombre").value;
+        var email = document.getElementById("email").value;
+        var txtarea = document.getElementById("txtarea").value;
+        document.getElementById("nombre").value = "";
+        document.getElementById("email").value = "";
+        document.getElementById("txtarea").value = "";
+        $.ajax({
+            url: "https://formspree.io/f/xoqvwedr", 
+            method: "POST",
+            data: {
+                Nombre: nombre,
+                Correo: email,
+                Mensaje: txtarea
+
+            },
+            dataType: "json"
+        });
+        return false;
+    });
+    
+</script>
 </html>
