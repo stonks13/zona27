@@ -4,6 +4,8 @@ body {
     align-items: center;
     margin: 0px;
     padding: 0;
+    height: 100vh;
+    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 35%, rgba(173,174,176,1) 100%);
 }
 form {
     border-radius: 15px;
@@ -11,11 +13,11 @@ form {
     height: auto;
     min-width: 280px;
     max-width: 800px;
-    background-color: #eeeeee;
     padding: 20px;
-    margin: 2px;
     display: flex;
     flex-direction: column;
+    margin: 80px 0 auto 0;
+    color: black;
 }
 form select {
     border: 2px solid black;
@@ -95,13 +97,13 @@ form input[type=submit]{
 .filterDiv {
     display: none;
     margin: 5px 0;
+    background-color: #eeeeee;
 }
 .block {
     display: flex;
     justify-content: space-between;
     border: 2px solid darkslategray;
     border-radius: 5px;
-    height: 100%;
     width: 100%;
 
 }
@@ -147,4 +149,81 @@ form input[type=submit]{
     text-indent: 5px;
     margin-left: 5px;
     border-bottom: 2px solid rgb(51, 51, 51);
+}
+#btn-add, .btn-back {
+    height: 50px;
+    width: 120px;
+    font-size: 16px;
+    border: 0;
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+}
+#btn-add {
+    align-self: flex-end;
+    margin: 10px -3px 20px 0;
+}
+.btn-back a {
+    height: 100%;
+    width: 100%;
+    font-size: 16px;
+    text-decoration: none;
+    color: white;
+    
+}
+.frame-add {
+    padding: 10px;
+    background-color: #dfdfdf;
+    border: 1px solid #888888b6;
+    border-radius: 10px;
+    display: none;
+    height: auto;
+    margin: 20px;
+
+}
+.frame-add h3{
+    margin: 10px 10px;
+}
+.frame-add input[type=text] {
+    border: 2px solid black;
+    border-radius: 5px;
+    width: 97%;
+    height: 40px;
+    font-size: 16px;
+    margin: 10px auto;
+    text-indent: 12px;
+    background-color: white;
+
+}
+.frame-add select {
+    border: 2px solid black;
+    border-radius: 5px;
+    width: 98%;
+    height: 45px;
+    font-size: 16px;
+    margin: 10px auto;
+    text-indent: 12px;
+    background-color: white;
+}
+.frame-add input[type=submit]{
+    height: 50px;
+    width: 100px;
+    border: 2px solid black;
+    margin: 10px 10px;
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+    font-size: 16px;
+    float: right;
+    
+}
+.add {
+    display: block;
+}
+/* admin-nav */
+.admin-nav {
+    display: grid;
+    grid-template-columns: auto auto;
 }

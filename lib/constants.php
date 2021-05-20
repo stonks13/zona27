@@ -20,9 +20,9 @@ $footer = <<<EOD
         <section class="top-side">
             <a href="/"><img src="/imagenes/constantes/logo_recortado.png" alt=""></a>
             <div class="redes">
-                <a href="https://www.instagram.com/zona27tattoo/"><img src="imagenes/constantes/instagram.png" alt=""></a>
-                <a href="https://www.facebook.com/tattoozona27/"><img src="imagenes/constantes/facebook.png" alt=""></a>
-                <a href="#"><img src="imagenes/constantes/twitter.png" alt=""></a>
+                <a href="https://www.instagram.com/zona27tattoo/"><img src="/imagenes/constantes/instagram.png" alt=""></a>
+                <a href="https://www.facebook.com/tattoozona27/"><img src="/imagenes/constantes/facebook.png" alt=""></a>
+                <a href="#"><img src="/imagenes/constantes/twitter.png" alt=""></a>
             </div>
         </section>
         <div class= "linea-division"></div>

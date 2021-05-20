@@ -50,3 +50,13 @@ function añadirSelect(clase, nombreClase){
       if (arr1.indexOf(arr2[index]) == -1) {clase.className += " " + arr2[index];}
     }
 }
+
+function addFrame(){
+    var item = document.getElementById("add-frame");
+    var clase = item.className.split(" ");
+    if (clase[clase.length -1] == "add"){
+        item.classList.remove("add");
+    } else{
+        item.classList.add("add");
+    }
+}

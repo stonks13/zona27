@@ -5,6 +5,7 @@ body {
     align-items: center;
     margin: 0px;
     padding: 0;
+    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 35%, rgba(173,174,176,1) 100%);
 }
 .administracionLista {
     border-radius: 15px;
@@ -38,10 +39,10 @@ form {
     height: auto;
     min-width: 280px;
     max-width: 500px;
-    background-color:#eeeeee;/* #eeeeee */
     padding: 20px;
     display: flex;
     flex-direction: column;
+    margin: auto 0;
 }
 form input {
     border: 2px solid rgb(51, 51, 51);

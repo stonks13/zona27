@@ -2,6 +2,8 @@
 require "../../db/functions/redes.php";
 require "../../db/functions/artistas.php";
 
+include "../../lib/constants.php";
+
 session_start();
 if(!isset($_SESSION['user'])){
     header("Location: /login");
@@ -25,6 +27,11 @@ if(isset($_POST["submit"])){
     <title>Redes</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="js/functions.js"></script>
+    <!-- header -->
+    <link rel="stylesheet" href="/lib/css/header.css">
+    <script src="/lib/js/header.js"></script>
+    <!-- footer css -->
+    <link rel="stylesheet" href="/lib/css/footer.css">
 
 
     <script>
@@ -39,9 +46,13 @@ if(isset($_POST["submit"])){
     </script>
 </head>
 <body>
+    <header>
+        <?php echo $header ?>
+    </header>
+    <!-- TODO: intentar quitar añadir  -->
     <?php if(isset($_GET["añadir"])): ?>
         <form method="POST">
-            <a href="../../../admin">atras</a>
+            <a href="../../../admin" class="btn-back">atras</a>
             <h1>Añadir red</h1>
             <select name="red" id="red">
                 <?php foreach($nombreRedes as $red): ?>
@@ -58,8 +69,11 @@ if(isset($_POST["submit"])){
         </form>
     <?php elseif(isset($_GET["modificarred"])): ?>
         <form method="post">
-            <h1>Modificar red</h1>
-            <a href="../../../admin">atras</a>
+            <div class="admin-nav">
+                <button class="btn-back" type="button">
+                <a href="../../../admin">atras</a></button>
+                <h1>Modificar red</h1>
+            </div>
             <select name="artistas" id="artistas" onchange="filtrarSeleccionados('categoria'+value+'')">
                 <?php foreach($artistas as $artista): ?>
                     <option value="<?php echo $artista['id'] ?>"><?php echo $artista['nombre'] ?></option>
@@ -78,9 +92,27 @@ if(isset($_POST["submit"])){
                 </div>
             </div>
             <?php endforeach ?>
-
+            <button type="button" id="btn-add" onclick="addFrame()">Añadir red</button>
+            <div class="frame-add" id="add-frame">
+                <h3>Red Social</h3>
+                <select name="red" id="red">
+                    <?php foreach($nombreRedes as $red): ?>
+                        <option value="<?php echo $red['id'] ?>"><?php echo $red['nombre'] ?></option>
+                    <?php endforeach ?>
+                </select>
+                <h3>Artista</h3>
+                <select name="artistas" id="artistas">
+                    <?php foreach($artistas as $artista): ?>
+                        <option value="<?php echo $artista['id'] ?>"><?php echo $artista['nombre'] ?></option>
+                    <?php endforeach ?>
+                </select>
+                <h3>Enlace url</h3>
+                <input type="text" name="red_url" placeholder="url">
+                <input type="submit" name="submit" value="AÑADIR">
+            </div>
         </form>
     <?php endif ?>
+    <?php echo $footer ?>
 </body>
 <script>
     filtrarSeleccionados("all");
