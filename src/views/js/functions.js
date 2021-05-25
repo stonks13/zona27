@@ -27,7 +27,8 @@ function filtrarSeleccionados(classSelected){
     if(classSelected == "all") classSelected = "";
     for (let index = 0; index < arrayClases.length; index++) {
         removerSelect(arrayClases[index], "show");
-        if (arrayClases[index].className.indexOf(classSelected) > -1) añadirSelect(arrayClases[index], "show");
+        var arr1 = arrayClases[index].className.split(" ");
+        if (arrayClases[index].className.indexOf(classSelected) > -1 && arr1[arr1.length -1].length == classSelected.length) añadirSelect(arrayClases[index], "show");
     }
 }
 

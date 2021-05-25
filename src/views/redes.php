@@ -17,6 +17,10 @@ $nombreRedes = getAllNombreRedes();
 if(isset($_POST["submit"])){
     añadirRedes($_POST["red"], $_POST["artistas"], $_POST["red_url"]);
 }
+if (isset($_POST["guardar"])) {
+    var_dump($_POST["id"]);
+    modificarRed($_POST["id"], $_POST["edited-url-save"]);
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -70,29 +74,29 @@ if(isset($_POST["submit"])){
     <?php elseif(isset($_GET["modificarred"])): ?>
         <form method="post">
             <div class="admin-nav">
-                <button class="btn-back" type="button">
-                <a href="../../../admin">atras</a></button>
+                <a href="../../../admin"><button class="btn-back" type="button">atras</button></a>
                 <h1>Modificar red</h1>
             </div>
-            <select name="artistas" id="artistas" onchange="filtrarSeleccionados('categoria'+value+'')">
+            <select name="artistas" id="artistas" onclick="filtrarSeleccionados(value+'categoria')">
                 <?php foreach($artistas as $artista): ?>
                     <option value="<?php echo $artista['id'] ?>"><?php echo $artista['nombre'] ?></option>
                 <?php endforeach ?>
             </select>
             <?php foreach($redes as $red): ?>
-            <div id="<?php echo "id_".$red['id'] ?>" class="filterDiv categoria<?php echo $red['id_artista']?>">
+            <div id="<?php echo "id_".$red['id'] ?>" class="filterDiv <?php echo $red['id_artista']?>categoria show">
                 <div class="block" onclick="desplegable(<?php echo $red['id'] ?>)">
                     <h2><?php echo $red['id_red'] ?></h2>
-                    <button class="eliminarbtn" onclick="eliminarRed(<?php echo $red['id'] ?>)">eliminar</button>
+                    <button type="button" class="eliminarbtn" onclick="eliminarRed(<?php echo $red['id'] ?>)">eliminar</button>
                 </div>
                 <div class="desplegable" id="desp_<?php echo $red['id'] ?>">
                     <!-- TODO: event change -->
-                    <h3>Url: <input type="text" onchange="alert('1')" class="contenidoEditable" value="<?php echo $red['url_red'] ?>" ></h3>
-                    <button type="button" onclick="alert('1')">Editar</button>
+                    <input type="hidden" name="id" value="<?php echo $red["id"] ?>">
+                    <h3>Url: <input type="text" name="edited-url-save" class="contenidoEditable" value="<?php echo $red['url_red'] ?>" ></h3>
+                    <input type="submit" name="guardar" class="btn-edit-save" value="guardar">
                 </div>
             </div>
             <?php endforeach ?>
-            <button type="button" id="btn-add" onclick="addFrame()">Añadir red</button>
+            <button type="button" id="btn-add" onclick="addFrame()">añadir red</button>
             <div class="frame-add" id="add-frame">
                 <h3>Red Social</h3>
                 <select name="red" id="red">
@@ -115,6 +119,5 @@ if(isset($_POST["submit"])){
     <?php echo $footer ?>
 </body>
 <script>
-    filtrarSeleccionados("all");
 </script>
 </html>
