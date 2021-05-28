@@ -1,6 +1,6 @@
 <?php
 require "../../db/functions/piercings.php";
-include("../../lib/subirFicheros.php");
+//include("../../lib/subirFicheros.php");
 require "../../db/functions/artistas.php";
 
 include "../../lib/constants.php";
@@ -25,52 +25,11 @@ if(isset($_POST["submit"])){
     } else {
         //$img, $titulo, $etiqueta, $id_categoria, $id_artista
         añadirPiercings($rutaFinal, $_POST["nombre"], $_POST["etiqueta"], $_POST["categoria"], $_POST["artistas"]);
+        header("Refresh:0");
     }
     //aa($image);
 }
-?><!--
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>piercings</title>
-    <link rel="stylesheet" href="css/style.css">
-    <script src="js/functions.js"></script>
-</head>
-<body>
-    <?php if(isset($_GET["añadir"])): ?>
-        <h1>Añadir piercing</h1>
-        <form method="POST" enctype="multipart/form-data">
-            <input type="text" name="nombre" placeholder="Titulo Piercing">
-            <input type="text" name="descripcion" placeholder="Descripcion Piercing">
-            <input type="text" name="etiqueta" placeholder="tags">
-            <select name="categoria" id="categoria">
-                <?php foreach($categoriasPiercings as $catPiercing): ?>
-                    <option value="<?php echo $catPiercing['id'] ?>"><?php echo $catPiercing['nombre'] ?></option>
-                <?php endforeach ?>
-            </select>
-            <select name="artistas" id="artistas">
-                <?php foreach($artistas as $artista): ?>
-                    <option value="<?php echo $artista['id'] ?>"><?php echo $artista['nombre'] ?></option>
-                <?php endforeach ?>
-            </select>
-            <input type="file" id="file" onchange="fileSelector(this)" name="image">
-            <label for="file"><span class="uploadIcon">&#8679;</span><span id="spanFileName"> Selecciona una imagen...</span></label>
-            <input type="submit" name="submit" value="Añadir">
-        </form>
-    <?php elseif(isset($_GET["modificarpiercing"])): ?>
-        <h1>Modificar piercings</h1>
-        <?php foreach($piercings as $piercing): ?>
-            <h3><?php echo $piercing['titulo'] ?></h3>
-            <img src="/imagenes/piercings/<?php echo $piercing['img'] ?>" alt="" style="width: 100px; height: 100px">
-            <p><?php echo $piercing['descripcion'] ?>.</p>
-        <?php endforeach ?>
-    <?php endif ?>
-</body>
-</html>
--->
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -104,25 +63,7 @@ if(isset($_POST["submit"])){
     <header>
         <?php echo $header ?>
     </header>
-    <!-- TODO: intentar quitar añadir  -->
-    <?php if(isset($_GET["añadir"])): ?>
-        <form method="POST">
-            <a href="../../../admin" class="btn-back">atras</a>
-            <h1>Añadir red</h1>
-            <select name="red" id="red">
-                <?php foreach($nombreRedes as $red): ?>
-                    <option value="<?php echo $red['id'] ?>"><?php echo $red['nombre'] ?></option>
-                <?php endforeach ?>
-            </select>
-            <select name="artistas" id="artistas">
-                <?php foreach($artistas as $artista): ?>
-                    <option value="<?php echo $artista['id'] ?>"><?php echo $artista['nombre'] ?></option>
-                <?php endforeach ?>
-            </select>
-            <input type="text" name="red_url" placeholder="url">
-            <input type="submit" name="submit" value="AÑADIR">
-        </form>
-    <?php elseif(isset($_GET["modificarpiercing"])): ?>
+    <?php if(isset($_GET["modificarpiercing"])): ?>
         <form method="post" enctype="multipart/form-data">
             <div class="admin-nav">
                 <a href="../../../admin"><button class="btn-back" type="button">atras</button></a>
@@ -193,7 +134,6 @@ function deleteFunc(id){
 function modifyFunc(id){
     var title = document.getElementById("edited-title-save"+id).value;
     var etiqueta = document.getElementById("edited-alttxt-save"+id).value;
-    console.log(txt);
     $.ajax({
         url: '/db/functions/piercings.php',
         type: 'post',

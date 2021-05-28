@@ -1,5 +1,4 @@
 <?php 
-
 //TODO: arreglar los echo.
 
 function guardarImagen($tipo){ //tipo = artista, tattoos, piercings...
@@ -31,13 +30,13 @@ function guardarImagen($tipo){ //tipo = artista, tattoos, piercings...
 
 function eliminarImagen($tipo, $imagen){
 	$directorio = "/home/xavi/Documents/zona27/imagenes/".$tipo."/";
-	
 	if(unlink($directorio.$imagen)){
+		
 		echo "ok";
 	} else {
 		echo "mal";
 	}
 }
-//eliminarImagen("artistas", "30-04-2021_18:49:00.jpeg");
+//eliminarImagen("piercings", "28-05-2021_14:52:22.jpeg");
  
 ?>

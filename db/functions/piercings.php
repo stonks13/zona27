@@ -1,6 +1,8 @@
 <?php 
 require_once(dirname(__FILE__).'/../DBManager.php');
 
+include("../../lib/subirFicheros.php");
+
 //require_once('../DBManager.php');
 //require_once('/home/xavi/Documents/zona27/db/DBManager.php');
 /**
@@ -98,11 +100,12 @@ function getAllPiercingsCategoria(){
 //modificarArtista(3, "xavier", "guapisimo", "");
 //eliminarArtista(10);
 //print_r(getAllArtistas());
+//modificarPiercings(4, "aaaaaaaa", "aaaaaaa");
 
 if (isset($_POST['deletefunction'])) {
     eliminarImagen("piercings", $_POST['delete-img']);
     eliminarPiercings($_POST['deletefunction']);
 } else if (isset($_POST['updatefunction'])) {
-    modificarPiercings($_POST['updatefunction'], $_POST['modify-txt'], $_POST['modify-tag']);
+    modificarPiercings($_POST['updatefunction'], $_POST['modify-title'], $_POST['modify-tag']);
 }
 ?>
