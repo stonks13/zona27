@@ -1,5 +1,6 @@
 <?php 
 require_once(dirname(__FILE__).'/../DBManager.php');
+
 //require_once('../DBManager.php');
 //require_once('/home/xavi/Documents/zona27/db/DBManager.php');
 /**
@@ -30,16 +31,14 @@ function añadirPiercings($img, $titulo, $etiqueta, $id_categoria, $id_artista, 
     
 }
 
-//solo podran modificar el titulo, etiquetas, descripcion, e imagenes (por definir si pueden o no.)
-function modificarPiercings($id, $img, $titulo, $etiqueta, $descripcion = ""){
+//solo podran modificar el titulo, etiquetas
+function modificarPiercings($id, $titulo, $etiqueta){
     $manager = new DBzona();
-    $sql = "UPDATE piercings SET img=:img, titulo=:titulo, etiqueta=:etiqueta, descripcion=:descripcion WHERE id=:id";
+    $sql = "UPDATE piercings SET titulo=:titulo, etiqueta=:etiqueta WHERE id=:id";
     $stmt = $manager->dbconn()->prepare($sql);
     $stmt->bindParam(':id',$id);
-    $stmt->bindParam(':img',$img);
     $stmt->bindParam(':titulo',$titulo);
     $stmt->bindParam(':etiqueta',$etiqueta);
-    $stmt->bindParam(':descripcion',$descripcion);
     if($stmt->execute()){
         echo "ok";
     } else {
@@ -99,4 +98,11 @@ function getAllPiercingsCategoria(){
 //modificarArtista(3, "xavier", "guapisimo", "");
 //eliminarArtista(10);
 //print_r(getAllArtistas());
+
+if (isset($_POST['deletefunction'])) {
+    eliminarImagen("piercings", $_POST['delete-img']);
+    eliminarPiercings($_POST['deletefunction']);
+} else if (isset($_POST['updatefunction'])) {
+    modificarPiercings($_POST['updatefunction'], $_POST['modify-txt'], $_POST['modify-tag']);
+}
 ?>

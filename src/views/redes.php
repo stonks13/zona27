@@ -16,6 +16,7 @@ $nombreRedes = getAllNombreRedes();
 
 if(isset($_POST["submit"])){
     añadirRedes($_POST["red"], $_POST["artistas"], $_POST["red_url"]);
+
 }
 if (isset($_POST["guardar"])) {
     var_dump($_POST["id"]);
@@ -37,6 +38,7 @@ if (isset($_POST["guardar"])) {
     <!-- footer css -->
     <link rel="stylesheet" href="/lib/css/footer.css">
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <script>
         function eliminarRed(id){
@@ -86,13 +88,14 @@ if (isset($_POST["guardar"])) {
             <div id="<?php echo "id_".$red['id'] ?>" class="filterDiv <?php echo $red['id_artista']?>categoria show">
                 <div class="block" onclick="desplegable(<?php echo $red['id'] ?>)">
                     <h2><?php echo $red['id_red'] ?></h2>
-                    <button type="button" class="eliminarbtn" onclick="eliminarRed(<?php echo $red['id'] ?>)">eliminar</button>
+                    <button type="button" class="eliminarbtn" onclick="deleteFunc(<?php echo $red['id'] ?>)">eliminar</button>
                 </div>
                 <div class="desplegable" id="desp_<?php echo $red['id'] ?>">
                     <!-- TODO: event change -->
                     <input type="hidden" name="id" value="<?php echo $red["id"] ?>">
-                    <h3>Url: <input type="text" name="edited-url-save" class="contenidoEditable" value="<?php echo $red['url_red'] ?>" ></h3>
+                    <h3>Url: <input type="text" id="edited-url-save<?php echo $red['id'] ?>" class="contenidoEditable" value="<?php echo $red['url_red'] ?>" ></h3>
                     <input type="submit" name="guardar" class="btn-edit-save" value="guardar">
+                    <button type="button" class="btn-edit-save" onclick="modifyFunc(<?php echo $red['id'] ?>)">eliminar</button>
                 </div>
             </div>
             <?php endforeach ?>
@@ -119,5 +122,28 @@ if (isset($_POST["guardar"])) {
     <?php echo $footer ?>
 </body>
 <script>
+function deleteFunc(id){
+    $.ajax({
+        url: '/db/functions/redes.php',
+        type: 'post',
+        data: { "deletefunction": id},
+        success: function(response) { console.log(response); }
+    });
+    var red = document.getElementById("id_"+id);
+    red.style.display = "none";
+
+}
+function modifyFunc(id){
+    var txt = document.getElementById("edited-url-save"+id).value;
+    console.log(txt);
+    $.ajax({
+        url: '/db/functions/redes.php',
+        type: 'post',
+        data: { "updatefunction": id, "modify-txt": txt },
+        success: function(response) { console.log(response); }
+    });
+
+}
+
 </script>
 </html>

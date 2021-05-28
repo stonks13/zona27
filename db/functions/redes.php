@@ -9,6 +9,7 @@ require_once(dirname(__FILE__).'/../DBManager.php');
  * link
  * 
  */
+
 function añadirRedes($nombre, $id_artista, $link){
     $manager = new DBzona();
     $sql = "INSERT INTO redes (id_red, id_artista, url_red) VALUES (:nombre, :id_artista, :link)";
@@ -82,4 +83,9 @@ function getAllRedes (){
 //print_r(getAllRedes());
 //print_r(getAllNombreRedes());
 //print_r(gett());
+if (isset($_POST['deletefunction'])) {
+    eliminarRed($_POST['deletefunction']);
+} else if (isset($_POST['updatefunction'])) {
+    modificarRed($_POST['updatefunction'], $_POST['modify-txt']);
+}
 ?>
