@@ -1,0 +1,44 @@
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0px;
+    padding: 0;
+    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 35%, rgba(173,174,176,1) 100%);
+}
+main{
+    margin-top: 80px;
+    padding-top: 20px;
+    height: 100%;
+    color: black;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    padding-bottom: 50px;
+}
+.btn-list-categories {
+    display: flex;
+    flex-wrap: wrap;
+    align-self: flex-start;
+}
+.btn-list-categories button {
+    border: 2px solid black;
+    border-radius: 25px;
+    background-color: white;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 10px;
+    margin: 5px;
+}
+.btn-list-categories .selected{
+    background-color: black;
+    color: white;
+}
+.filterDiv {
+    display: none;
+}
+
+.show {
+    display: block;
+}

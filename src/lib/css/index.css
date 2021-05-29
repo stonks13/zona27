@@ -1,0 +1,90 @@
+html {
+    scroll-behavior: smooth;
+}
+main {
+    padding-top: 50px;
+    background-color: #121116;
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+main h1{
+    padding: 30px 0;
+    margin: 0;
+    text-align: center;
+    width: 100%;
+    font-size: 36px;
+
+}
+article.artistas {
+    margin: 40px 0;
+
+}
+.carousel {
+    height: 240px;
+    z-index: 1;
+}
+.carousel .carousel-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    width: 240px;
+    height: 240px;
+}
+.carousel-item h2 {
+    margin: 0;
+    color: white;
+    display: inline;
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+.carousel-item .linea-division {
+    width: 80%;
+    height: 2px;
+    background-color: white;
+}
+.carousel .carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    border-radius: 15px;
+}
+.carousel .carousel-item a{
+    font-size: 14px;
+    color: white;
+    cursor: pointer;
+}
+
+@media screen and (min-width: 600px){
+
+    article.artistas {
+        margin: 40px 0 80px 0;
+    }
+    .carousel {
+        height: 300px;
+    }
+    .carousel .carousel-item {
+        width: 300px;
+        height: 300px;
+    }
+}
+@media screen and (min-width: 1000px){
+
+    article.artistas {
+        margin: 40px 0 100px 0;
+    }
+    .carousel {
+        height: 400px;
+    }
+    .carousel .carousel-item {
+        width: 360px;
+        height: 360px;
+    }
+}

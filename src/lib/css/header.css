@@ -1,0 +1,160 @@
+body{
+    margin: 0;
+    color: white;
+}
+header{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.landingPage {
+    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 35%, rgba(173,174,176,1) 100%);
+    height: 100vh;
+    
+}
+header img{
+    display: block;
+    margin: auto;
+    height: 70%;
+    object-fit: cover;
+    margin-top: 100px;
+}
+header nav{
+    background: #121116;
+    height: 80px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    z-index: 100;
+
+}
+#mainbox{
+	margin-right: 40px;
+	font-size: 36px;
+	cursor: pointer;
+	transition: all .6s;
+	color: white;
+    align-self: center;
+}
+.closebtn{
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    font-size: 60px;
+    margin-left: 32px;
+    cursor: pointer;
+    height: auto;
+}
+header nav img {
+    height: 80px;
+    width: auto;
+    filter: invert(100%);
+    margin: 0 50px;
+    z-index: 2;
+}
+header button, .btn-scroll {
+    margin-bottom: 50px;
+    font-size: 34px;
+    width: 60px;
+    height: 60px;
+    color: black;
+    text-indent: 2px;
+    text-align: center;
+    padding: 0;
+    border: 3px solid black;
+    border-radius: 50%;
+    background: none;
+    transition: 0.5s;
+    position: absolute;
+    bottom: -20px;
+}
+.btn-scroll {
+    position: fixed;
+    display: none;
+    width: 40px;
+    height: 40px;
+    font-size: 30px;
+    right: 30px;
+    background-color: lavender;
+}
+header button:hover {
+    color: white;
+    background-color: black;
+}
+header button:focus,
+header button:focus-visible,
+.btn-scroll:focus{
+    outline: none;
+    background-color: lavender;
+}
+
+/* Responsive movile*/
+
+header nav ul{
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    height: 0;
+    width: 100vw;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: black;
+    z-index: 1;
+    opacity: 85%;
+    overflow-x: hidden;
+    transition: all .3s ease-out;
+    
+}
+header nav ul li{
+    height: 80px;
+    width: 100%;
+    list-style-type: none;
+}
+header nav ul li a {
+    display: flex;
+    color: white;
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    height: 100%;
+}
+
+/* Responsive tablet*/
+@media screen and (min-width: 900px){
+    header nav ul {
+        position: initial;
+        height: 80px !important;
+        flex-direction: row;
+        width: auto;
+        background-color: inherit;
+        opacity: 100%;
+        margin-right: 20px;
+    }
+    header nav ul li{
+        height: 100%;
+        width: auto;
+        margin: 0 15px;
+        list-style-type: none;
+    }
+    .closebtn{
+        display: none;
+    }
+    #mainbox {
+        display: none !important;
+    }
+}
+/* Responsive laptop*/
+@media screen and (min-width: 1382px){
+}
+
+/*
+
+
+*/
